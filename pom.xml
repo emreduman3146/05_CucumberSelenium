@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>05_CucumberFrameworkOgreniyorum</artifactId>
+    <version>1.0</version>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <bonigarcia.version>5.2.1</bonigarcia.version>
+        <selenium.version>4.6.0</selenium.version>
+        <cucumber.version>7.2.3</cucumber.version>
+        <log4j.version>1.2.17</log4j.version>
+        <apachePOI.version>5.2.2</apachePOI.version>
+        <aShot.version>1.5.4</aShot.version>
+        <monteScreenRecorder.version>0.7.7.0</monteScreenRecorder.version>
+        <itextpdf.version>5.5.13.3</itextpdf.version>
+        <archetype-packaging.version>3.1.1</archetype-packaging.version>
+    </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <!-- tum cesit broswerlarin driver.exe filelarini icerir, artik tek tek .exe file indirmek zorunda degiliz-->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${bonigarcia.version}</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <!-- //https://mvnrepository.com/ git ve selenium java ara-->
+        <!-- selenium'un resmi sitesinden indirdigimiz tum jar filelarini icerir -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!--LOGLAMA YAPABILMEK ICIN GEREKLI DEPENDENCY -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+
+        <!--
+             BIR EXCEL DOSYASINI GUZELCE OKUMAK-YAZMAK ICIN BIZE HAZIR CLASSES/METHODS VERIR
+             VERSIYONLARI AYNI OLMALIDIR
+         -->
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${apachePOI.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${apachePOI.version}</version>
+        </dependency>
+
+
+        <!--TO TAKE SCREENSHOT OF ALL WEBPAGE -->
+        <!-- https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot -->
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>${aShot.version}</version>
+        </dependency>
+
+        <!--TO CAPTURE VIDEO RECORD  -->
+        <!-- https://mvnrepository.com/artifact/com.github.stephenc.monte/monte-screen-recorder -->
+        <dependency>
+            <groupId>com.github.stephenc.monte</groupId>
+            <artifactId>monte-screen-recorder</artifactId>
+            <version>${monteScreenRecorder.version}</version>
+        </dependency>
+
+        <!--PDF okuma/yazma islemleri icin class/method sunar bize-->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>${itextpdf.version}</version>
+        </dependency>
+
+
+    </dependencies>
+
+
+
+
+</project>

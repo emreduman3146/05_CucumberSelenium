@@ -1,0 +1,92 @@
+A->MAVEN Project'i biz nasil olusturuyorduk?
+
+        1-Maven project olusturmayi Intellij,Eclipse,VSC gibi IDE'lerin
+          bize sunmus oldugu arayuz sayesinde yapabiliriz.
+
+        2-Ama bir bilgisayarda yapabilecegimiz her olayin, her isin terminalden de yapilabilecegini unutmayalim.
+          Biz hangi programi kullanirsak kulanalim bu degismez, bilgisayar kullanirken yaptigimiz
+          tum isler,tum emirler,commandler birer terminal komutudur aslinda.
+
+        3-Ornek:
+            Maven project olusturmayi kullanici arayuzu/user interface ile nasil yapabilirim?
+                Intellij'e indir, file>new>project>.... ile olustur
+
+B->Peki terminalden nasil olustururum?
+
+        1-Ilk olarak, Bilgisayariniz maven kurulu olmak zorundadir, system variables'da maven tanimli olmalidir.
+        2-Sonra, projeyi olusturmak istediginiz path'e terminalde gidiniz.
+            2.1 Istediginiz path'i Belgelerim'den ctrl+v yapin
+            2.2 Terminale gelin ve "cd" yazip ctrl+v yapin + enter
+            2.3 terminaldeki pathiniz degisti
+        3-Ardindan asagidaki 6 satir maven command'ini terminale yaziniz + Enter
+             mvn archetype:generate
+            -DgroupId=com.dumanCompany  bu projenin kayfoldugu path
+            -DartifactId=CucumberFramework  bu projenin folde adi
+            -Dversion=2.0
+            -DinteractiveMode=false
+
+            -DarchetypeVersion=1.0
+            -DarchetypeArtifactId=maven-archetype-quickstart
+
+
+            Artik terminal, verilen emiri 0101010 diline donusurur ve PC'nin isletimcisine/CPU'suna gonderir
+            CPU verdigimiz emiri yerine getiri ve istedigimiz path'te bir maven project olusur
+
+
+C->Yukaridaki kodu satir satir yorumlayalim!
+
+     mvn archetype:generate: Bu, Maven'in archetype eklentisini kullanarak yeni bir proje oluşturmasını söyler.
+
+    -DgroupId=io.cucumber: Bu, projenin groupId'sini "io.cucumber" olarak ayarlar. Maven'de, groupId, projeyi oluşturan organizasyon veya şirketi tanımlamak için kullanılır.
+
+    -DartifactId=05_CucumberFramework: Bu, projenin artifactId'sini "05_CucumberFramework" olarak ayarlar. Maven'de, artifactId, grubun içindeki özel projeyi tanımlamak için kullanılır.
+
+    -DarchetypeArtifactId=maven-archetype-quickstart: Bu, "maven-archetype-quickstart" archetype'i yeni projenin şablonu olarak kullanmasını söyler. archetype, Maven eklentisi olarak özel bir proje türü için bir proje yapısı ve temel dosyaları oluşturur.
+
+    -DarchetypeVersion=1.4: Kullanılacak archetype sürümünü belirtir.
+
+    -DinteractiveMode=false: Bu, arketip eklentisi için etkileşimli modunu devre dışı bırakır, böylece komut kullanıcı girdisi gerektirmeden çalışacaktır.
+
+
+
+D->Terminal dilinde uzmanlasmak isteyenler bos vakitlerinde kisisel gelisim amacli sunlari yapabilirler.
+    1-Windows Kullanicilari
+        1.1-BASH SCRIPTING ogrenebilirler
+    2-MAC kullanicilari
+        2.1-ZSHELL SCRIPTING ogrenebilirler
+    3-KAYNAK->Google
+
+
+D->Peki maven cucumber archtype'ini kullanarak hazir bir Cucumber project nasil olustururuz?
+
+    mvn archetype:generate
+    -DarchetypeGroupId=io.cucumber
+    -DarchetypeArtifactId=cucumber-archetype
+    -DarchetypeVersion=7.5.0
+    -DgroupId=hellocucumber
+    -DartifactId=05_CucumberFramework3
+    -Dpackage=merhabacucumber
+    -Dversion=3.0
+    -DinteractiveMode=false
+
+
+
+E->Yukardaki kodu satir satir yorumlayalim
+
+    mvn archetype:generate: Bu, Maven'in arketip eklentisini kullanarak yeni bir proje oluşturmasını söyler.
+
+    -DarchetypeGroupId=io.cucumber: Bu, yeni projeyi oluşturmak için kullanılacak archetype'in groupId'sini belirler. Bu, archetype'i oluşturan organizasyon veya şirketi belirtir.
+
+    -DarchetypeArtifactId=cucumber-archetype: Bu, yeni projeyi oluşturmak için kullanılacak archetype'im artifactId'sini belirler. Bu, kullanılacak özel archetype'i belirtir.
+
+    -DarchetypeVersion=7.5.0: Bu, yeni projeyi oluşturmak için kullanılacak archetype'in sürümünü belirler.
+
+    -DgroupId=hellocucumber: Bu, yeni projenin groupId'sini belirler. Bu, projeyi oluşturan organizasyon veya şirketi tanımlamak için kullanılır.
+
+    -DartifactId=hellocucumber: Bu, yeni projenin artifactId'sini belirler. Bu, grubun içindeki özel projeyi tanımlamak için kullanılır.
+
+    -Dpackage=merhabacucumber: Bu yeni proje için paket adını belirler
+
+    -Dversion=1.0.0-SNAPSHOT: Bu yeni projesinin sürümünü belirler
+
+    -DinteractiveMode=false: Bu, arketip eklentisi için etkileşimli modunu devre dışı bırakır, böylece komut kullanıcı girdisi gerektirmeden çalışacaktır.

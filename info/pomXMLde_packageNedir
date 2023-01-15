@@ -1,0 +1,15 @@
+Maven'de, packaging öğesi,
+
+    bir projenin hangi türde bir paket olarak oluşturulması gerektiğini belirtmek için kullanılır.
+    Bir archetype için, paketleme "maven-archetype" olarak ayarlanır,
+    bu, projenin arketip olarak paketlenmesi anlamına gelir ve bu arketip Maven archetype eklentisini kullanarak
+    yeni projeler oluşturmak için bir şablon olarak kullanılabilir.
+
+
+    Maven bu projeyi oluşturduğunda,
+        archetype-metadata.xml ve pom.xml dosyalarını arar ve
+        Maven bu dosyalardaki bilgileri kullanarak yeni projeler oluşturmak için
+        bir şablon olarak kullanabilecek bir archetype oluşturur.
+        Son paket archetype içeren bir jar dosyası olacaktır,
+        bu jar dosyası daha sonra yerel depoya veya uzak depoya saklanabilir ve
+        sonra mvn archetype:generate komutu ile arketip olarak kullanılabilir.
