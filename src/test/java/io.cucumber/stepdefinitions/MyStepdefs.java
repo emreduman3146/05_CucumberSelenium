@@ -1,9 +1,12 @@
 package io.cucumber.stepdefinitions;
 
 import io.cucumber.java.en.*;
+import io.cucumber.pages.CountrySelectPage;
 import io.cucumber.utilities.PageObjectUtil;
 import io.cucumber.utilities.WaitUtil;
+import org.checkerframework.checker.units.qual.C;
 import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.support.ui.Select;
 import static io.cucumber.driver.Driver.closeDriver;
 import static io.cucumber.driver.Driver.getDriver;
@@ -99,7 +102,7 @@ public class MyStepdefs extends PageObjectUtil
     {
 
         //DO ASSERTION FOR girisYapButonu  - BU WEB ELEMENTI 2 KEZ LOCATE ETTIK, DEMEKKI KOTU KOD YAZIYORUZ.
-        WaitUtil.waitForVisibility(homePage.girisYapLinkText,2);
+        WaitUtil.waitForVisibility(homePage.girisYapLinkText,4);
         Assert.assertTrue(homePage.girisYapLinkText.isDisplayed());
 
         getDriver().close();
@@ -107,8 +110,9 @@ public class MyStepdefs extends PageObjectUtil
 
 
 
-    //2.FEATURE FILE'DA KULLANILAN STEPLER
 
+
+    //PARAMETRELI GHERKIN STEPLERI ICIN OLUSTURULAN STEPDEFINITIONLAR
     @Given("Trendyol homepageine navigate edilmesi {string}")
     public void trendyolHomepageineNavigateEdilmesi(String url)
     {
@@ -139,7 +143,7 @@ public class MyStepdefs extends PageObjectUtil
         //2->Obje olusturmak icin defaultConstructor kullandik
         //3->Default constructor kullanirken, icindeki PageFactroty yapisini calisirmis olduk
 
-        actions.moveToElement(homePage.girisYapLinkText).perform();
+        actions.pause(2000).moveToElement(homePage.girisYapLinkText).perform();
 
 
         //ACIGA CIKAN GIRIS YAP BUTTONUNA CLICK YAP

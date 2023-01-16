@@ -11,7 +11,6 @@ public class UserHomePage extends ParentPage
     public WebElement hesabim;
     @FindBy(xpath = "//p[@class='user-name']")
     public WebElement username;
-
     @FindBy(xpath = "//p[text()='Çıkış Yap']")
     public WebElement cikisYapButonu;
 
