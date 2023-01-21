@@ -1,4 +1,5 @@
 *.iml
 .idea
 target
-javaDoc
+javaDocumentation
+src/test/resources/features/a

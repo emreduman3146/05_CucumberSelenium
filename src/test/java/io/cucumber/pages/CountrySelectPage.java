@@ -1,15 +1,10 @@
 package io.cucumber.pages;
 
 
-import io.cucumber.driver.Driver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
-import org.openqa.selenium.support.PageFactory;
-
-import static io.cucumber.driver.Driver.getDriver;
 
 
 //PAGE OBJECT MODEL-> SELENIUM OTOMASYON KUTUPHANESININ BIZE SUNDUGU BIR KALIPTIR/PATTERNDIR

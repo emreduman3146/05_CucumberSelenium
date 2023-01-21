@@ -6,25 +6,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.*;
 
-import java.io.IOException;
 import java.time.Duration;
+
 import static io.cucumber.driver.Driver.getDriver;
 
 /**
  * Description - This util class has multiple methods to perform wait action with selenium-java
  *             - It contains hard/implicit/explicit(WebdriverWait,FluentWait) waiting methods
- * @author Duman, Emre
+ * @author  Duman, Emre
  * @since 1.0
  */
+@SuppressWarnings("unchecked")
 public class WaitUtil
 {
-
 
     /**
      * Description: This is for hard waiting with java Thread class
      * @param second to wait
      * @author Emre Duman
-     * @see TakeScreenShotsUtil#takeScreenshot
+     * *@see TakeScreenShotsUtil#takeScreenshot(Object, String, String, boolean, boolean, WebElement)
      * Date - January 14, 2023
      */
     public static void waitFor(int second)
@@ -35,7 +35,6 @@ public class WaitUtil
             e.printStackTrace();
         }
     }
-
 
 
     public static WebElement waitForVisibility(WebElement element, int timeout) {
@@ -65,6 +64,7 @@ public class WaitUtil
     }
 
 
+
     public static void waitForPageToLoad(long timeout)
     {
         //JAVADA ANONYMOUS KONUSU - ISTEYENLER GOOGLE'SINLAR, TESTCILER BILMEZ BU KONUYU
@@ -87,14 +87,18 @@ public class WaitUtil
         }
     }
 
+
     /**
-     * @deprecated As of version 1.3, replaced by {@link #waitForPageToLoad(long)}}
+     * @deprecated This Method hass been deprecated.
      * @param timeout
      */
     public static void waitForPageToLoad(int timeout)
     {
-        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
+        getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(timeout));
     }
+
+
+
 
     public static WebElement fluentWait(final WebElement webElement, int timeout)
     {

@@ -1,9 +1,12 @@
-@US02
-Feature: TrendYol WebApp'inin login ozelliginin User storysi US02
+@UserStory01
+Feature: Login to E-commerce Trendyol WebApplication
+  As a customer
+  I want to be able to login to the website
+  So that I can access my account
 
 
-  @TC01
-  Scenario: Trenyol Userin GMAIL SIFRE girerek login olmasi test case
+  @US01_TestCase01
+  Scenario: The customer uses valid credentials to login the account
     #Given -> test case icin gerekli on sartlarin yapildigi methodlar
     Given Trendyol homepageine navigate edilmesi
     #And-> Ustundeki turuncu gherkin dili keywordunun devami demektir
@@ -21,4 +24,8 @@ Feature: TrendYol WebApp'inin login ozelliginin User storysi US02
     When userin cikis yap butonuna tiklayarak accountdan log off olmasi
 
     Then user cikis yaptigina dair verification assertin yapar
+
+    And CucumberRunner dryRun kullanimini ogreniyorum
+
+
 

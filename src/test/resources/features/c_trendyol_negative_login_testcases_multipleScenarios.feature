@@ -1,8 +1,10 @@
-@US01
-Feature: (Ozellik) TrendYol WebApp'inin login ozelliginin User story'si - (kullanicinin giris yapamama user storysi) - US01
+@US02
+Feature: Login to E-commerce Trendyol WebApplication
+  As a customer
+  I should not login to the website with invalid credentials
 
-  @US01_TC01
-  Scenario: Trenyol User'in yanlis email ile login olmaya calismasi - testcase01 -TC01
+  @US02_TC01
+  Scenario: The customer uses invalid email to login the account
     #Given -> test case icin gerekli on sartlarin yapildigi methodlar
     Given Trendyol homepageine navigate edilmesi "https://www.trendyol.com/"
     #And-> Ustundeki turuncu gherkin dili keywordunun devami demektir
@@ -11,12 +13,13 @@ Feature: (Ozellik) TrendYol WebApp'inin login ozelliginin User story'si - (kulla
     #When->userin webApp'te reaksiyon gosterdigi an
     When Userin giris yap pageinde email girmesi "tdemailtestdata@gmail.comMMMM"
     And Userin giris yap pageinde sifre girmesi "Trendyol123!"
-    And Userin turuncu giris yap butonuna click yapmasi ve cikan hata mesajini verify etmesi "E-posta adresiniz ve/veya şifreniz hatalı."
+    Then Userin turuncu giris yap butonuna click yapmasi ve cikan hata mesajini verify etmesi "E-posta adresiniz ve/veya şifreniz hatalı."
+    But Hata mesaji boyle olmamali "Lütfen geçerli bir e-posta adresi giriniz."
 
 
 
-  @US01_TC02
-  Scenario: Trenyol User'in yanlis sifre ile login olmaya calismasi - testcase02 - TC02
+  @US02_TC02
+  Scenario: The customer uses invalid password to login the account
    #Given -> test case icin gerekli on sartlarin yapildigi methodlar
     Given Trendyol homepageine navigate edilmesi "https://www.trendyol.com/"
     #And-> Ustundeki turuncu gherkin dili keywordunun devami demektir
@@ -25,5 +28,6 @@ Feature: (Ozellik) TrendYol WebApp'inin login ozelliginin User story'si - (kulla
     #When->userin webApp'te reaksiyon gosterdigi an
     When Userin giris yap pageinde email girmesi "tdemailtestdata@gmail.com"
     And Userin giris yap pageinde sifre girmesi "Trendyol123!!!!!!!!"
-    And Userin turuncu giris yap butonuna click yapmasi ve cikan hata mesajini verify etmesi "E-posta adresiniz ve/veya şifreniz hatalı."
+    Then Userin turuncu giris yap butonuna click yapmasi ve cikan hata mesajini verify etmesi "E-posta adresiniz ve/veya şifreniz hatalı."
+    But Hata mesaji boyle olmamali "Lütfen geçerli bir e-posta adresi giriniz."
 

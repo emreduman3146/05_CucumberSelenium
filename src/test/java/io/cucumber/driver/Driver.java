@@ -1,6 +1,5 @@
 package io.cucumber.driver;
 
-import io.cucumber.utilities.ConfigurationFileUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,8 +10,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import java.io.File;
-import java.io.StringReader;
 
 
 public class Driver {
@@ -34,10 +31,6 @@ public class Driver {
                 case "chrome":
                     ChromeOptions option1=new ChromeOptions();
 
-                    //chrome'da reklam pop=uplari gormemek icin chrome extension kullaniyoruz
-                    //.crx file'inin path'ini configuration.properties file'indan getiriyoruz
-                    //option1.addExtensions(new File(ConfigurationFileUtil.getProperty("blockADs_chromeExtension_path")));
-
                     //browser maximized baslasin, sag-sol ustten cikan alert_popUp'lar otomatik kapatilsin
                     option1.addArguments("--start-maximized","--disable-notifications");
 
@@ -46,6 +39,7 @@ public class Driver {
 
                     driver= WebDriverManager.chromedriver().avoidShutdownHook().capabilities(option1).create();
                     break;
+
                 case "firefox":
                     driver= new FirefoxDriver();
                     driver.manage().window().maximize();
