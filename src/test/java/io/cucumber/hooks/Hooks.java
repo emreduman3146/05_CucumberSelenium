@@ -2,6 +2,7 @@ package io.cucumber.hooks;
 
 import io.cucumber.java.*;
 import io.cucumber.java.BeforeAll;
+import io.cucumber.utilities.PageObjectUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,7 +28,11 @@ public class Hooks
     @Before(order=2)
     public void beforeScenario2(Scenario scenario) {
         System.out.println("beforeScenario2");
+        PageObjectUtil.initializeObjects();
+
     }
+
+
 
     //Her bir gherkin step'inden once calisir
     @BeforeStep

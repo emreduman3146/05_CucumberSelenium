@@ -11,9 +11,10 @@ import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 
 import static io.cucumber.driver.Driver.getDriver;
+import static io.cucumber.utilities.PageObjectUtil.*;
 
 
-public class MyStepdefs_parametresizStepler extends PageObjectUtil
+public class MyStepdefs1_parametresizStepler// extends PageObjectUtil
 {
 
 
@@ -83,7 +84,7 @@ public class MyStepdefs_parametresizStepler extends PageObjectUtil
     public void userinBasariliBirSekildeGirisYaptigininVerificationEdilmesi() {
 
         //HESABIM LINKI MEVCUT OLANA KADAR BEKLE -SONRA HOVER OVER YAP
-        WaitUtil.waitForVisibility(userHomePage.hesabim,2);
+        WaitUtil.waitForVisibility(userHomePage.hesabim,5);
         actions.pause(1000).moveToElement(userHomePage.hesabim).perform();
 
         Assert.assertTrue(userHomePage.username.getText().equalsIgnoreCase("tdemailtestdata@gmail.com"));
@@ -109,10 +110,6 @@ public class MyStepdefs_parametresizStepler extends PageObjectUtil
     }
 
 
-    @Then("CucumberRunner dryRun kullanimini ogreniyorum")
-    public void cucumber_runner_dry_run_kullanimini_ogreniyorum() {
-        System.out.println("DRY RUN KULLANIMI SAYEINDE BU METHODU HAZIR ALDIM");
-    }
 
 
 }

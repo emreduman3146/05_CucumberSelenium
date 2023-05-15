@@ -6,11 +6,14 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 
+import java.time.Duration;
+
 import static io.cucumber.driver.Driver.closeDriver;
 import static io.cucumber.driver.Driver.getDriver;
+import static io.cucumber.utilities.PageObjectUtil.*;
 
 
-public class MyStepdefs2_parametreliStepler extends PageObjectUtil
+public class MyStepdefs2_parametreliStepler// extends PageObjectUtil
 {
 
     //PARAMETRELI GHERKIN STEPLERI ICIN OLUSTURULAN STEPDEFINITIONLAR
@@ -44,6 +47,7 @@ public class MyStepdefs2_parametreliStepler extends PageObjectUtil
         //2->Obje olusturmak icin defaultConstructor kullandik
         //3->Default constructor kullanirken, icindeki PageFactroty yapisini calisirmis olduk
 
+        WaitUtil.waitForClickablility(homePage.girisYapLinkText, 5);
         actions.pause(2000).moveToElement(homePage.girisYapLinkText).perform();
 
 

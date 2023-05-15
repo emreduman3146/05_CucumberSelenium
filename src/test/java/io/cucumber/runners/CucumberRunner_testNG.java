@@ -14,7 +14,7 @@ import static io.cucumber.testng.CucumberOptions.SnippetType.CAMELCASE;
         },
     features = "src/test/resources/features/",//cucumber scanerilarimizin geldigi package
     glue = {"io/cucumber/stepdefinitions"},//uhulamak, stepDefinitionlarimizin geldigi package
-    tags = "@US01_TestCase01",
+    tags = "@US02_tablo",
     dryRun = false,// hazir olmayan gherkin steplerinin orneklerini verir, terminalde
     //publish = true,
     monochrome = true,//if you want console output from Cucumber in a readable format, you can specify it true

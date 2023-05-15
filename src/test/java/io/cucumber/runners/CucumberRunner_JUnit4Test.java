@@ -21,9 +21,9 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.UNDERSCORE;
         features = "src/test/resources/features/",
         glue = {"io/cucumber/stepdefinitions","io/cucumber/hooks"},
         dryRun = false,
-        tags = ("@US02"),
+        tags = ("@InvalidCredentials"),
         monochrome = false,
-        //publish = false,
+        publish = false,
         snippets = UNDERSCORE
 
 )

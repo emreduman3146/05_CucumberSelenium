@@ -25,7 +25,5 @@ Feature: Login to E-commerce Trendyol WebApplication
 
     Then user cikis yaptigina dair verification assertin yapar
 
-    And CucumberRunner dryRun kullanimini ogreniyorum
-
 
 
