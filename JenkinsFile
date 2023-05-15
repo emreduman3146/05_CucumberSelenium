@@ -5,7 +5,7 @@ pipeline {
             stage('Running Test') {
                     steps {
                         script {
-                            sh 'mvn -s ./jenkinsconfig/settings.xml clean test'
+                            sh 'mvn clean test'
                         }
                     }
             }
