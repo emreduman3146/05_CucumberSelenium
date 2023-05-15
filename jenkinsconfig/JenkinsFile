@@ -1,0 +1,15 @@
+pipeline {
+        agent any
+        parameters {    }
+    stages {
+            stage('Running Test') {
+                    steps {
+                        script {
+                            sh 'mvn -s ./jenkinsconfig/settings.xml clean test'
+                        }
+                    }
+            }
+    }
+
+}
+
